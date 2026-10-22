@@ -44,19 +44,6 @@ static const TemperatureLutEntry temperature_lut[] =
 		{1.31f, 115.0f},
 		{1.30f, 120.0f}};
 
-float temperature_from_adc(uint16_t adc_value)
-{
-	/*
-	 * Converts a raw ADC measurement received from a TMS satellite
-	 * into temperature in degrees Celsius.
-	 *
-	 * Conversion path:
-	 * raw ADC -> sensor voltage -> LUT interpolation -> deg C
-	 *
-	 * TODO: Confirm ADC-to-sensor-voltage conversion with electrical team.
-	 */
-}
-
 static bool find_lut_interval(float voltage, size_t *first_lut_index)
 {
 	// a binary search implementation to find the interval which the target voltage is betweeen.
@@ -119,7 +106,9 @@ TemperatureStatus temperature_voltage_to_celsius(float voltage, float *temperatu
 	// 3. Interpolate
 	float fraction = (voltage - first_entry.voltage) / (second_entry.voltage - first_entry.voltage);
 	*temperature_c = first_entry.temperature_c + (fraction * (second_entry.temperature_c - first_entry.temperature_c));
-	// 4. Return °C
+	// 4. Return status, and temperature gets written into temperature_c
 	return TEMPERATURE_STATUS_OK;
+	// in tms_data.h we define a struct to hold the temperature values of each segment. temperature_c holds a pointer to write the data into that struct.
+	// that is where data is saved. this function modifies that data INSIDE that struct rather than spitting out something new and manually writing it in each time.
+	// it returns the status. Ensures the write went okay
 }
-//test 
