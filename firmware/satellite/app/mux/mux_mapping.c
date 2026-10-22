@@ -22,6 +22,7 @@ MuxMappingStatus mux_get_sensor_index(
         channel >= MUX_CHANNEL_COUNT)
     {
         return MUX_MAPPING_INVALID_ARGUMENT;
+        // checks for valid mux input, input validation
     }
 
     uint8_t sensor_number = mux_sensor_map[mux][channel];
@@ -30,6 +31,7 @@ MuxMappingStatus mux_get_sensor_index(
     {
         return MUX_MAPPING_UNUSED_CHANNEL;
     }
+    // there is one unused channel in our mux. since we have 3 8-1 multiplexers in place, that is a total of 24 channels for 23 cell segments.
 
     *sensor_index = sensor_number - 1;
 
