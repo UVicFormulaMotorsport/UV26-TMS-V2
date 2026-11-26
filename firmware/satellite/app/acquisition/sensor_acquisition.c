@@ -23,7 +23,7 @@ SensorAcquisitionStatus sensor_read_raw(
 
     // we will end up here if *adc_value is not null and if the mux-mapped sensor is valid
     // this is where the actual adc read logic should happen
-    // remember that when addressing s2s1s0 for the MUX, we are going to recieve 3 ADC reads simultaneously
+    // remember that when addressing s2s1s0 for the MUX, we are going to recieve 3 analog voltage reads simultaneously
 
     // the actual GPIO select lines logic is separated from here.
 
