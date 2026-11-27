@@ -57,24 +57,30 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define MUX02_Pin GPIO_PIN_1
-#define MUX02_GPIO_Port GPIOA
-#define MUX01_Pin GPIO_PIN_2
-#define MUX01_GPIO_Port GPIOA
-#define MUX03_Pin GPIO_PIN_3
-#define MUX03_GPIO_Port GPIOA
+#define MUX02_DAQ_Pin GPIO_PIN_1
+#define MUX02_DAQ_GPIO_Port GPIOA
+#define MUX01_DAQ_Pin GPIO_PIN_2
+#define MUX01_DAQ_GPIO_Port GPIOA
+#define MUX03_DAQ_Pin GPIO_PIN_3
+#define MUX03_DAQ_GPIO_Port GPIOA
 #define CS_LTC6820_Pin GPIO_PIN_4
 #define CS_LTC6820_GPIO_Port GPIOA
 #define MUXE_Pin GPIO_PIN_0
 #define MUXE_GPIO_Port GPIOB
 #define ADDR_Pin GPIO_PIN_9
 #define ADDR_GPIO_Port GPIOA
-#define MUX1_Pin GPIO_PIN_5
-#define MUX1_GPIO_Port GPIOB
-#define MUX2_Pin GPIO_PIN_6
-#define MUX2_GPIO_Port GPIOB
-#define MUX3_Pin GPIO_PIN_7
-#define MUX3_GPIO_Port GPIOB
+#define SW_Data_In_Out_Pin GPIO_PIN_13
+#define SW_Data_In_Out_GPIO_Port GPIOA
+#define Serial_Wire_CLOCK_Pin GPIO_PIN_14
+#define Serial_Wire_CLOCK_GPIO_Port GPIOA
+#define Serial_Wire_OUT_Pin GPIO_PIN_3
+#define Serial_Wire_OUT_GPIO_Port GPIOB
+#define MUX1_Addr_Supply_Pin GPIO_PIN_5
+#define MUX1_Addr_Supply_GPIO_Port GPIOB
+#define MUX2_Addr_Supply_Pin GPIO_PIN_6
+#define MUX2_Addr_Supply_GPIO_Port GPIOB
+#define MUX3_Addr_Supply_Pin GPIO_PIN_7
+#define MUX3_Addr_Supply_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
