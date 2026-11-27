@@ -6,7 +6,8 @@
 typedef enum
 {
     ADC_READ_OK,
-    ADC_READ_ERROR
+    ADC_READ_ERROR,
+    ADC_CONFIG_ERROR
 } ADCReadStatus;
 
 // function to read adc
